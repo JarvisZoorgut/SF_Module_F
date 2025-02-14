@@ -1,4 +1,4 @@
-tr.selected-member {
+tr.selected-member td {
     background: orange !important;
     color: red !important;
 }

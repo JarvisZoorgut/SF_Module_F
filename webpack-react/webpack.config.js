@@ -15,14 +15,9 @@ module.exports = {
         rules: [
             {
                 test: /\.(ts|tsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "awesome-typescript-loader",
-                    options: {
-                        presets: ["@babel/preset-env", "@babel/preset-react"]
-                    }
-                }
-            },
+                use: "ts-loader",
+                exclude: /node_modules/
+                },
             {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]

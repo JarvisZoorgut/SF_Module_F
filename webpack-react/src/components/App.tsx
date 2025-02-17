@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import "../styles/App.css";
 import Header from "./Header";
@@ -10,10 +10,10 @@ function App() {
     const buttonName = "КНОПКА NEW"; //примеh выноса переменной за пределы компонента, в компоненте Header цепляем через props
 
     return (
-        <Fragment>
+        <>
             <Header buttonName = {buttonName} />
             <Main />
-        </Fragment>
+        </>
     );
 }
 

@@ -20,8 +20,9 @@ function Header(props) {
     )
 }
 
-Header.propTypes = {
-    count: PropTypes.number,
-}
+// это тип данных в свойстве props, для валидации данных (перестало работать в TypeScript)
+// Header.propTypes = {
+//     count: PropTypes.number,
+// }
 
 export default Header;

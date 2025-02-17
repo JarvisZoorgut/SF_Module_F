@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types"
 
 import "../styles/Header.css";
 
@@ -17,6 +18,10 @@ function Header(props) {
                 </button>
         </header>
     )
+}
+
+Header.propTypes = {
+    count: PropTypes.number,
 }
 
 export default Header;

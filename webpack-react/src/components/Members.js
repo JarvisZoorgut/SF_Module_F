@@ -17,7 +17,9 @@ function Members() {
         <Table striped bordered hover className="members">
             <thead><tr><th>Name</th><th>Age</th><th>SecretIdentity</th><th>Select</th></tr></thead>
             <tbody>
-                {members.map(member => <Member key={member.name} member={member}/> )}
+                {members.map(member => member.secretIdentity ? <Member key={member.name} name={member.name} 
+                age={member.age} secretIdentity={member.secretIdentity}/> :
+                <Member key={member.name} name={member.name} age={member.age} />)}
             </tbody>
         </Table>
     );

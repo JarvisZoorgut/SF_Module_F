@@ -2,21 +2,12 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import ReduxApp from "./App-redux";
+import ReduxApp from "../App-redux";
 
-// Редуктор
-const initialState: string[] = ["redux", "react"];
+import rootReducer from './redux/reducers'
 
-function changeStore(state = initialState, action: { type: string; payload?: string }) {
-  switch (action.type) {
-    case "WRITE":
-      return [...state, action.payload || ""];
-    default:
-      return state;
-  }
-}
 
-const store = createStore(changeStore);
+const store = createStore(rootReducer);
 
 // Рендер приложения
 const root = createRoot(document.getElementById("root")!);

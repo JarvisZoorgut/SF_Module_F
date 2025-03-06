@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import changeFramework from "./src/redux/reducers/frameworks";
-import changeLibrary from "./src/redux/reducers/libraries";
+import changeFramework from "../redux/reducers/frameworks";
+import changeLibrary from "../redux/reducers/libraries";
 
 // Определяем интерфейсы для пропсов и состояния
 interface ReduxAppProps {

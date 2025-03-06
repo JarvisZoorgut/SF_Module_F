@@ -2,9 +2,8 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
-import ReduxApp from "../App-redux";
 import App from "./components/App";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Router } from "react-router-dom";
 
 import rootReducer from './redux/reducers'
 import { logging } from './redux/middleware/logging'

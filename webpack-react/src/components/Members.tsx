@@ -8,9 +8,26 @@ import "../styles/Members.css"
 
 function Members() {
     const [members, setMembers] = useState([]);
+
+    // кастомные типы, далее прописываются как (member : MemberType)
+    type Member = {
+        name: string;
+        age: number;
+        secretIdentity: string;
+        powers: string[];
+      };
+      
+      type ResType = {
+        data: {
+          members: Member[]; // массив объектов типа Member
+        };
+      };
+      
+
     if(!members.length) {
-        axios.get("https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json").then(res => {
+        axios.get("https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json").then((res: ResType) => {
             setMembers(res.data.members);
+            console.log(res);
         });
     }
     return (

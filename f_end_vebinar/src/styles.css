@@ -1,0 +1,9 @@
+.App {
+    font-family: system-ui;
+}
+
+p {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: x-large;
+}

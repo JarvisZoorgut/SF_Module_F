@@ -11,8 +11,6 @@ export default function App() {
       <Students label="Поток 1" />
       <Students label="Поток 2" />
       <Students label="Поток 3" />
-      <br />
-
 
     </div>
   );

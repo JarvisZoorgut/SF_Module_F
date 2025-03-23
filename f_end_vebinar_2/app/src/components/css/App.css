@@ -1,0 +1,35 @@
+.navHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: 0 auto;
+    font-size: larger;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.main {
+    padding: 50px;
+    margin: 0 auto;
+    width: 600px;
+    height: 400px;
+}
+.par {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.img {
+    width: 600px;
+    height: 400px;
+}
+
+.footer {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+}

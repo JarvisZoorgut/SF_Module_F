@@ -1,0 +1,6 @@
+.list {
+	display: flex;
+    flex-direction: column;
+    border: 2px solid #f1f0f0;
+    border-radius: 5px;
+}

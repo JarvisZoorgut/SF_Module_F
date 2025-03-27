@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Students = ({ label }) => {
+export const Students = ({ label, onMove }) => {
     const [items, setItems] = React.useState([]);
     const [inputValue, setInputValue] = React.useState("");
 
@@ -8,6 +8,13 @@ export const Students = ({ label }) => {
         setItems((prev) => [...prev, inputValue]);
         setInputValue("");
     };
+
+    const moveClick = () => {
+        if (onMove) {
+            onMove(items);
+            setItems([]);
+        }
+    }
 
 
     return (
@@ -23,7 +30,7 @@ export const Students = ({ label }) => {
             />
             <button onClick={handleClickAdd}>Добавить</button>
             <div>
-                <button>Переместить</button>
+                <button onClick={moveClick}>Переместить</button>
             </div>
         </div>
     );

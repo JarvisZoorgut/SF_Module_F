@@ -1,12 +1,11 @@
+import Posts from './Posts'
 
 function App() {
-  return (
-    <div>
-      <header>
-
-      </header>
-    </div>
-  );
+    return (
+	<>
+  	    <Posts/>
+	</>
+    );
 }
 
 export default App;

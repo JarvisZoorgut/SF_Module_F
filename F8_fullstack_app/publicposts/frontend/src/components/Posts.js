@@ -3,7 +3,7 @@ import PostService from "./PostService";
 
 const postService = new PostService();
 
-const Posts = () => {
+export default class Posts extends Component {
 	constructor(props){
     	super(props)
     	this.state = {
@@ -58,5 +58,3 @@ const Posts = () => {
 	}
 
 }
-
-export default Posts

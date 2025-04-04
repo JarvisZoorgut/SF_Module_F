@@ -2,6 +2,9 @@
 # python
 /venv
 .env
+/publicposts/__pycache__
+/publicposts/publicpostsapp/__pycache__
+
 
 # dependencies
 /publicposts/frontend/node_modules

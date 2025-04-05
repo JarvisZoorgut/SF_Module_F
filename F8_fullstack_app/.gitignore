@@ -2,8 +2,7 @@
 # python
 /venv
 .env
-/publicposts/__pycache__
-/publicposts/publicpostsapp/__pycache__
+__pycache__
 
 
 # dependencies

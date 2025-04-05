@@ -20,14 +20,24 @@ def posts(request):
         post.save()
         return Response(status=status.HTTP_200_OK)
 
+
 @api_view(['GET'])
 def like_post(request, post_id):
-    if request.method == 'GET':
-        try:
-            post = Post.objects.get(id = post_id)
-        except:
-            return Response(status = status.HTTP_400_BAD_REQUEST)
+    try:
+        post = Post.objects.get(id=post_id)
+        post.likesCount += 1
+        post.save()
+        return Response({'likesCount': post.likesCount}, status=status.HTTP_200_OK)
+    except Post.DoesNotExist:
+        return Response({'error': 'Post not found'}, status=status.HTTP_404_NOT_FOUND)
 
-    setattr(post, 'likesCount', post.likesCount + 1)
-    post.save()
-    return Response(post.likesCount, status.HTTP_200_OK)
+
+@api_view(['DELETE'])
+def delete_post(request, post_id):
+    try:
+        post = Post.objects.get(id=post_id)
+    except Post.DoesNotExist:
+        return Response({"message": "Post not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    post.delete()
+    return Response({"message": "Post deleted successfully"}, status=status.HTTP_200_OK)

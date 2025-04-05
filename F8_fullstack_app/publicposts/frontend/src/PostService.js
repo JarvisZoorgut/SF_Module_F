@@ -12,12 +12,17 @@ export default class PostService{
     }
 
     setLikePost(id) {
-    const url = `${API_URL}/api/like_post/` + id;
+    const url = `${API_URL}/api/like_post/${id}/`;
     return axios.get(url).then(response => response.data);
     }
 
     createPost(text){
     const url = `${API_URL}/api/posts/`;
     return axios.post(url,text);
+    }
+
+    deletePost(id) {
+        const url = `${API_URL}/api/delete_post/${id}/`;
+        return axios.delete(url).then(response => response.data);
     }
 }

@@ -1,0 +1,3 @@
+curl -X POST http://localhost:8080/news \
+  -H "Content-Type: application/json" \
+  -d '{"news": "Новость от внешнего сервиса!"}'

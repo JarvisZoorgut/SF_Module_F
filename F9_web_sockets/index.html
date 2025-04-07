@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live News Feed</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    #news { border: 1px solid #ccc; padding: 1em; max-width: 500px; }
+    .item { margin-bottom: 0.5em; padding: 0.3em; background: #f9f9f9; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h2>Live News Feed</h2>
+  <div id="news"></div>
+
+  <script>
+    const newsDiv = document.getElementById("news");
+    const ws = new WebSocket(`ws://${window.location.host}/ws`);
+
+    ws.onopen = () => {
+      console.log("Connected to server");
+      // Optionally send pings
+      setInterval(() => {
+        ws.send("ping");
+      }, 10000);
+    };
+
+    ws.onmessage = (event) => {
+      const item = document.createElement("div");
+      item.className = "item";
+      item.textContent = event.data;
+      newsDiv.prepend(item);
+    };
+
+    ws.onclose = () => {
+      console.log("Disconnected from server");
+    };
+  </script>
+</body>
+</html>
